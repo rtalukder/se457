@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class QuoteServiceImplmentation {
 
     // array of quotes that will user will receive
-    private final ArrayList<String> quotes = new ArrayList<String>(Arrays.asList(
+    public ArrayList<String> quotes = new ArrayList<String>(Arrays.asList(
                                                     "Some say he knows two facts about ducks, and both of them are wrong. All we know is he's called the Stig. -Jeremy Clarkson",
                                                     "Some say that he invented the curtain. All we know is he's called the Stig. -Jeremy Clarkson",
                                                     "Stay hungry, stay foolish. -Steve Jobs",
@@ -48,14 +48,7 @@ public class QuoteServiceImplmentation {
             // log that the quote was added for debugging
             System.out.println("The quote was added.");
         }
-        System.out.println(quotes.size());
-    }
-
-    public static void main(String[] args) {
-        QuoteServiceImplmentation quoteService = new QuoteServiceImplmentation();
-        System.out.println(quoteService.getQuote());
-        quoteService.addQuote(null);
-        quoteService.addQuote("kl");
+        System.out.println("New quotes list size: " + quotes.size());
     }
 }
 

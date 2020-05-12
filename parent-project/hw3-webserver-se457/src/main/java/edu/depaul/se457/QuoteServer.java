@@ -17,5 +17,6 @@ public class QuoteServer {
         Endpoint.publish(serverURI, quoteService);
 
         System.out.println("Server started at " + serverURI);
+        System.out.println("Current quotes list size: " + quoteService.quotes.size());
     }
 }
