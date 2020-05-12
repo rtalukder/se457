@@ -17,11 +17,11 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "QuoteService", targetNamespace = "http://se457.depaul.edu/")
+@WebService(name = "QuoteServiceImplmentation", targetNamespace = "http://se457.depaul.edu/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
-public interface QuoteService {
+public interface QuoteServiceImplmentation {
 
 
     /**
@@ -31,7 +31,7 @@ public interface QuoteService {
     @WebMethod
     @RequestWrapper(localName = "addQuote", targetNamespace = "http://se457.depaul.edu/", className = "edu.depaul.se457.AddQuote")
     @ResponseWrapper(localName = "addQuoteResponse", targetNamespace = "http://se457.depaul.edu/", className = "edu.depaul.se457.AddQuoteResponse")
-    @Action(input = "http://se457.depaul.edu/QuoteService/addQuoteRequest", output = "http://se457.depaul.edu/QuoteService/addQuoteResponse")
+    @Action(input = "http://se457.depaul.edu/QuoteServiceImplmentation/addQuoteRequest", output = "http://se457.depaul.edu/QuoteServiceImplmentation/addQuoteResponse")
     public void addQuote(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
@@ -45,7 +45,7 @@ public interface QuoteService {
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getQuote", targetNamespace = "http://se457.depaul.edu/", className = "edu.depaul.se457.GetQuote")
     @ResponseWrapper(localName = "getQuoteResponse", targetNamespace = "http://se457.depaul.edu/", className = "edu.depaul.se457.GetQuoteResponse")
-    @Action(input = "http://se457.depaul.edu/QuoteService/getQuoteRequest", output = "http://se457.depaul.edu/QuoteService/getQuoteResponse")
+    @Action(input = "http://se457.depaul.edu/QuoteServiceImplmentation/getQuoteRequest", output = "http://se457.depaul.edu/QuoteServiceImplmentation/getQuoteResponse")
     public String getQuote();
 
 }

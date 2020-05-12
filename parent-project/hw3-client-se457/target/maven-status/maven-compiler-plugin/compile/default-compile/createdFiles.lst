@@ -2,8 +2,8 @@ edu\depaul\se457\GetQuote.class
 edu\depaul\se457\QuoteClient.class
 edu\depaul\se457\GetQuoteResponse.class
 edu\depaul\se457\ObjectFactory.class
-edu\depaul\se457\QuoteService.class
 edu\depaul\se457\package-info.class
 edu\depaul\se457\AddQuoteResponse.class
+edu\depaul\se457\QuoteServiceImplmentationService.class
 edu\depaul\se457\AddQuote.class
-edu\depaul\se457\QuoteServiceService.class
+edu\depaul\se457\QuoteServiceImplmentation.class

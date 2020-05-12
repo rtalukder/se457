@@ -46,7 +46,7 @@ public class QuoteServiceImplmentation {
             // add quote to the array list
             quotes.add(quote);
             // log that the quote was added for debugging
-            System.out.println("The quote added.");
+            System.out.println("The quote was added.");
         }
         System.out.println(quotes.size());
     }

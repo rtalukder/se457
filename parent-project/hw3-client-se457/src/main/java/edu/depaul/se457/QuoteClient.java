@@ -11,9 +11,9 @@ public class QuoteClient {
     public static void main(String[] args) throws MalformedURLException {
 
         // start an instance of the service
-        QuoteServiceService quoteService = new QuoteServiceService();
+        QuoteServiceImplmentationService quoteService = new QuoteServiceImplmentationService();
         // attach the instance of the service to the interface and get a port number
-        QuoteService quoteServiceEndpoint = quoteService.getQuoteServicePort();
+        QuoteServiceImplmentation quoteServiceEndpoint = quoteService.getQuoteServiceImplmentationPort();
         // hit the getQuote endpoint and save it under quoteRecv
         String quoteRecv = quoteServiceEndpoint.getQuote();
         // print the quote received
