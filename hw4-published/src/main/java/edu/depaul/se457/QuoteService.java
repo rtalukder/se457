@@ -81,7 +81,11 @@ public class QuoteService {
     @Path("/getQuotes/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getQuoteById(@PathParam("id") int id){
+        // get the quoteObject from the hashmap
         QuoteObject quoteObject = quoteDict.get(id);
+        // if not null
+        // return status 200 code and the quoteObject
+        // the quoteObject includes the identifier and the quote
         if(quoteObject != null){
             return Response
                     .status(200)
@@ -89,6 +93,8 @@ public class QuoteService {
                     .entity(quoteObject)
                     .build();
         }
+        // if the quoteObject is null from the hashmap
+        // return status 400 and a message
         else {
             return Response
                     .status(400)
@@ -102,9 +108,15 @@ public class QuoteService {
     @Path("/addQuotes/{quote}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response addQuote(@PathParam("quote") String quote){
+        // take user input quote string and create a new quote object
+        // ID is assigned from static instanceCounter variable
         QuoteObject quoteObject = new QuoteObject(instanceCounter, quote);
+        // add the new quoteObject to the hashmap
         quoteDict.put(quoteObject.getId(), quoteObject);
+        // increment the instanceCounter
         instanceCounter++;
+        // return status 200 and the quoteObject created
+        // the quoteObject includes the identifier and the quote
         return Response
                 .status(200)
                 .entity(quoteObject)
@@ -116,7 +128,12 @@ public class QuoteService {
     @Path("/updateQuotes/{id}/quote/{newQuote}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateQuote(@PathParam("id") int id, @PathParam("newQuote") String newQuote){
+        // get the quoteObject from the hashmap
         QuoteObject quoteObject = quoteDict.get(id);
+        // if not null take in user parameters and create new quoteObject
+        // replace hashmap at id key value with the new quote object
+        // return status 200 code and the updated quoteObject
+        // the quoteObject includes the identifier and the quote
         if (quoteObject != null) {
             QuoteObject newQuoteObject = new QuoteObject(id, newQuote);
             quoteDict.replace(id, newQuoteObject);
@@ -125,6 +142,8 @@ public class QuoteService {
                     .entity(newQuoteObject)
                     .build();
         }
+        // if the quoteObject is null from the hashmap
+        // return status 400 and a message
         else {
             return Response
                     .status(400)
@@ -138,7 +157,11 @@ public class QuoteService {
     @Path("/deleteQuotes/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteQuote(@PathParam("id") int id){
+        // get the quoteObject from the hashmap
         QuoteObject removedQuote = quoteDict.get(id);
+        // if not null remove the quote from the hashmap with the given id
+        // return status 200 code and the removed quoteObject
+        // the quoteObject includes the identifier and the quote
         if (removedQuote != null) {
             quoteDict.remove(id);
             return Response
@@ -147,6 +170,8 @@ public class QuoteService {
                     .entity(removedQuote)
                     .build();
         }
+        // if the quoteObject is null from the hashmap
+        // return status 400 and a message
         else {
             return Response
                     .status(400)
