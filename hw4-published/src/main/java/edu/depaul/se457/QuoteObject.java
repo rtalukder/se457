@@ -5,6 +5,7 @@ package edu.depaul.se457;
  * Author: Raquib Talukder
  **/
 
+// object to hold quote string and id
 public class QuoteObject {
     int id;
     String quote;
@@ -18,7 +19,7 @@ public class QuoteObject {
         return quote;
     }
 
-    public Integer getId(){
+    public int getId(){
         return id;
     }
 }
